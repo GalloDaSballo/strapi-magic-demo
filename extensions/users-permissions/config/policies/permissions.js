@@ -3,6 +3,7 @@ const _ = require('lodash');
 module.exports = async (ctx, next) => {
   let role;
   await strapi.plugins['magic'].services['magic'].loginWithMagic(ctx);
+  // await strapi.plugins['magic'].services['magic'].loginWithMagic(ctx, true); //To use Decentralized IDs
   if (ctx.state.user) {
     // request is already authenticated in a different way
     return next();
